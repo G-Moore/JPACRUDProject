@@ -1,0 +1,30 @@
+Id,name,calories,fat,grams,protien,carbs,fiber,type
+,Carrot,41,0.2,100,0.9,9.6,2.8,Root Vegetable
+,Radish,19,0.1,116,0.8,3.9,1.9,Root Vegetable
+,Turnip,36,0.13,130,1,8,2,Root Vegetable
+,Shallot,75,0,100,2.5,17,3,Bulb Vegetable
+,Scallion,32,0.3,100,1.83,7.34,2.6,Bulb Vegetable
+,Garlic,4,0.01,3,0.18,0.93,0.1,Bulb Vegetable
+,Leek,54,0,100,1,13,2,Bulb Vegetable
+,Onion,40,0.1,100,1.1,9.3,1.7,Bulb Vegetable
+,Celery,5.6,0.1,100,0.3,1.2,0.6,Stem Vegetable
+,Chard,7,0.07,36,0.65,1.35,0.6,Stem Vegetable
+,Fiddlehead,9.5,0.9,28,1.3,5.5,0,Stem Vegetable
+,Asparagus,20,0.2,90,2.2,3.9,1.8,Stem Vegetable
+,Broccoli,31,0.4,91,2.5,6,2.4,Flower Vegetable
+,Artichoke,25,0,56,2,6,5,Flower Vegetable
+,Cauliflower,25,0,100,2,5,2,Flower Vegetable
+,Spinach,7,1,30,0.9,3.8,0.7,Leaf Vegetable
+,Bok Choy,,,,,,,Leaf Vegetable
+,Kale,,,,,,,Leaf Vegetable
+,Cabbage,,,,,,,Leaf Vegetable
+,Yam,,,,,,,Tuber Vegetable
+,Taro,,,,,,,Tuber Vegetable
+,Sweet Potato,,,,,,,Tuber Vegetable
+,Tomato,,,,,,,Fruit Vegetable
+,Squash,,,,,,,Fruit Vegetable
+,Eggplant,,,,,,,Fruit Vegetable
+,Okra,,,,,,,Fruit Vegetable
+,Olive,,,,,,,Fruit Vegetable
+,Bell Pepper,,,,,,,Fruit Vegetable
+,Cucumber,,,,,,,Fruit Vegetable
