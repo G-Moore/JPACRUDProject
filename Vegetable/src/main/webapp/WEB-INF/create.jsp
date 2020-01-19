@@ -32,7 +32,7 @@
 		<label for="type">Type</label>
 			 <input type="text" name="type" /><br>
 			 
-		<input type="hidden" name="vegId" value="${veg.id}" /> 
+		<input type="hidden" name="vid" value="<%-- ${veg} --%>" /> 
 		<input type="submit" name="Submit" value="Submit" />
 	</form>
 

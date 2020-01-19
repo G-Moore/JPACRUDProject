@@ -9,10 +9,11 @@
 </head>
 <body>
 	<H1>Edit</H1>
-	<form action="modify.do" method="POST">
+
+	<form action="modify.do" >
 
 		<label for="name">Name</label> 
-			<input type="text" name="name" value="${veg .name}"/><br>
+			<input type="text" name="name" value="${veg.name}"/><br>
 
 		<label for="grams">Grams</label>
 		 	<input type="text" name="grams" value="${veg.grams}"/><br>
@@ -32,9 +33,10 @@
 		<label for="type">Type</label>
 			 <input type="text" name="type" value="${veg.type}"/><br>
 			 
-		<input type="hidden" name="Sid" value="${veg.id}" /> 
-		<input type="submit" name="Submit" value="Submit" />
+		<input type="hidden" name="vid" value="${veg.id}" /> 
+		<input type="submit" name="vid" value="Edit" />
 	</form>
+
 
 	<form action="/" method="GET">
 		<input type="submit" value="Home" />

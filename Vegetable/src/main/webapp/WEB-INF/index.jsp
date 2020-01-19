@@ -9,20 +9,12 @@
 </head>
 <body>
 <h1>Vegetables</h1>
-<form action="getVeg.do" method="GET">
-  Vegetable ID: <input type="text" name="vid" />
+<form action="listVeg.do" method="GET">
+  Vegetable ID: <input type="number" name="vid" />
   <input type="submit" value="Show Vegetable" />
 </form>
-<form action="create.do">
-  <input type="submit" value="Create" />
+<form action="createNewPage.do">
+  <input type="submit" value="Add Vegetable" />
 </form>
-<c:forEach var="vegetable" items="${vegs}">
-		<li>
-		 <a href="getVeg.do?vid=${vegetable.id}">${vegetable.name}</a>
-		</li>
-</c:forEach> 
-<form action="/" method="GET">
-		<input type="submit" value="Show Vegetables" />
-	</form>
 </body>
 </html>

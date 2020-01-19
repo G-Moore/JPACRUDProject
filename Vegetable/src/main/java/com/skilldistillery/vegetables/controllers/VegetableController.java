@@ -21,50 +21,65 @@ public class VegetableController {
 
 	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public String home(Model model) {
-		List<Vegetable> vegs = new ArrayList<>();
-		vegs = dao.findAll();
-		model.addAttribute("vegs", vegs);
 		return "WEB-INF/index.jsp";
 	}
 
-	@RequestMapping(path = "getVeg.do")
-	public String showVeg(@RequestParam Integer vid, Model model) {
-//		Vegetable veg = new Vegetable();
+	@RequestMapping(path = "showVeg.do")
+	public String showVeg(Integer vid, Model model) {
 		Vegetable veg = dao.findById(vid);
 		model.addAttribute("veg", veg);
 		return "WEB-INF/vegetable/show.jsp";
 
+	}
+	@RequestMapping(path = "listVeg.do")
+	public String listVeg(Integer vid, Model model) {
+		if(vid != null) {
+			Vegetable veg = dao.findById(vid);
+			model.addAttribute("veg", veg);
+			return "WEB-INF/vegetable/listVeg.jsp";
+		}else {
+			List<Vegetable> vegs = new ArrayList<>();
+			vegs = dao.findAll();
+			model.addAttribute("vegs", vegs);
+			return "WEB-INF/vegetable/listVeg.jsp";
+		}
 	}
 
 	@RequestMapping(path = "create.do", method = RequestMethod.POST)
 	public String createVeg(Vegetable vegetable, Model model) {
 		vegetable = dao.create(vegetable);
 		model.addAttribute("vegetable", vegetable);
-		return "WEB-INF/create.jsp";
+		return "WEB-INF/index.jsp";
 
 	}
 
-	@RequestMapping(path = "create.do", method = RequestMethod.GET)
+	@RequestMapping(path = "createNewPage.do", method = RequestMethod.GET)
 	public String goCreateVeg() {
 		return "WEB-INF/create.jsp";
 	}
 
-	@RequestMapping(path = "modify.do", method = RequestMethod.GET)
-	public String goModifyVeg() {
+	@RequestMapping(path = "edit.do")
+	public String goModifyVeg(@RequestParam("vid") Integer id, Vegetable veg, Model model) {
+		Vegetable veg1 = dao.findById(id);
+
+		model.addAttribute("veg", veg1);
 		return "WEB-INF/modify.jsp";
 	}
 
-	@RequestMapping(path = "modify.do", method = RequestMethod.POST)
-	public String modifyVeg(Integer id, Vegetable vegetable, Model model) {
-		vegetable.setId(id);
-		vegetable = dao.update(id, vegetable);
-		model.addAttribute("vegetable", vegetable);
-		return "WEB-INF/modify.jsp";
-
+	@RequestMapping(path = "modify.do")
+	public String modifyVeg(@RequestParam("vid") Integer id, Vegetable veg, Model model) {
+//		Vegetable veg1 = dao.findById(vid);
+		veg = dao.update(id, veg);
+		if(veg == null) {
+			return "WEB-INF/error.jsp";
+		}else {
+		model.addAttribute("veg", veg);
+		return "WEB-INF/index.jsp";
+		}
 	}
 
 	@RequestMapping(path = "delete.do", method = RequestMethod.GET)
-	public String goDeleteVeg(@RequestParam("VegId") int id) {
+	public String deleteVeg(@RequestParam("vid") int id) {
 		dao.delete(id);
 		return "WEB-INF/index.jsp";
 	}

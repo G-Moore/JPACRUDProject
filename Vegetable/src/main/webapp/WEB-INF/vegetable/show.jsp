@@ -26,14 +26,16 @@
 		<p>No Vegetable Found</p>
 	</c:otherwise>
 	</c:choose>
-	<form action="modify.do" method="GET">
-		<input type="hidden" name="VegId" value="${veg.id}" /> 
+	<c:if test="${! empty veg}">
+	<form action="edit.do" method="POST">
+		<input type="hidden" name="vid" value="${veg.id}" /> 
 		<input type="submit" name="Edit" value="Edit" />
 	</form>
-	<form action="delete.do" method="GET">
-		<input type="hidden" name="VegId" value="${veg.id}" /> 
+	<form action="delete.do">
+		<input type="hidden" name="vid" value="${veg.id}" /> 
 		<input type="submit" name="Delete" value="Delete" />
 	</form>
+	</c:if>
 
 	<br>
 	<form action="/" method="GET">
