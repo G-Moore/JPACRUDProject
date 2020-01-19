@@ -38,7 +38,7 @@ public class VegetableDAOImpl implements VegetableDAO{
 		return vegetable;
 	}
 	@Override
-	public Vegetable update(int id, Vegetable vegetable) {
+	public Vegetable update(Integer id, Vegetable vegetable) {
 		
 		Vegetable vegetableToBeChangedFromDB = em.find(Vegetable.class, id);
 		
@@ -57,7 +57,7 @@ public class VegetableDAOImpl implements VegetableDAO{
 	}
 
 	@Override
-	public boolean delete(int id) {
+	public boolean delete(Integer id) {
 		
 		Vegetable vegetable = em.find(Vegetable.class, id);
 		em.remove(vegetable);

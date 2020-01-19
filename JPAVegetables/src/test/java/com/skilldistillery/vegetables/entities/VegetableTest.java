@@ -32,6 +32,7 @@ class VegetableTest {
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
 		vegetable = em.find(Vegetable.class, 1);
+
 	}
 
 	@AfterEach
@@ -41,6 +42,15 @@ class VegetableTest {
 
 	@Test
 	void test() {
-		assertEquals("Carrot", vegetable.getName());	}
+		assertEquals("Carrot", vegetable.getName());
+
+	}
+
+	@Test
+	void test2() {
+		vegetable.setName("Carrot");
+		assertEquals("Carrot", vegetable.getName());
+
+	}
 
 }
